@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { DataBindigComponent } from './data-bindig/data-bindig.component';
+import { AlertModule } from 'ngx-bootstrap/alert';
 
 @NgModule({
   declarations: [
@@ -11,6 +12,7 @@ import { DataBindigComponent } from './data-bindig/data-bindig.component';
   ],
   imports: [
     BrowserModule
+    ,AlertModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
