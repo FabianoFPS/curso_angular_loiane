@@ -1,0 +1,24 @@
+<section class="ngclass">
+    <article>
+        <a href="https://youtu.be/DCFJZzFwDKs" target="_blank" rel="noopener noreferrer">
+        <h3>Curso Angular #29: Diretivas: ngClass</h3></a>
+        <p>* Para visualizar os glyphicon é necessario ativar o bootstrap 3 no index.html</p>
+        <h1>
+            <i class="glyphicon"
+                [class.glyphicon-star-empty]="!meuFavorito"
+                [class.glyphicon-star]="meuFavorito"
+                (click)="onClik()">
+            </i>
+        </h1>
+        <br>
+        <h1>
+            <i class="glyphicon"
+                [ngClass]="{
+                    'glyphicon-star-empty': !meuFavorito,
+                    'glyphicon-star': meuFavorito
+                }"
+                (click)="onClik()">
+            </i>
+        </h1>
+    </article>
+</section>

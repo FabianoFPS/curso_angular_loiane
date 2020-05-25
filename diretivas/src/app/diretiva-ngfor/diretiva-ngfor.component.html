@@ -1,0 +1,26 @@
+<section class="ngfor">
+    <article>
+        <a href="https://youtu.be/seEbP5FGcvo" target="_blank" rel="noopener noreferrer">
+        <h3>Curso Angular 2 #27: Diretivas: ngFor</h3></a>
+        <ul>
+            <li *ngFor="let curso of cursos">
+                {{ curso }}
+            </li>
+        </ul>
+        <ul>
+            <li *ngFor="let curso of cursos, let i = index">
+               {{ i }} - {{ curso }}
+            </li>
+        </ul>
+        <ul>
+            <li *ngFor="let curso of listaCursos, let i = index">
+               {{ curso }} ( {{ i+1 }} / {{ listaCursos.length }})
+            </li>
+        </ul>
+        <!-- <ul>
+            <li *ngFor="let curso of cursosObservable | async, let i = index">
+               {{ curso }} + ({{ i+1 }})
+            </li>
+        </ul> -->
+    </article>
+</section>

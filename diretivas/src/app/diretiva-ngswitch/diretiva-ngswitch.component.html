@@ -1,0 +1,50 @@
+<hr>
+<section class="ngswitch">
+    <article>
+        <a href="https://youtu.be/uToE2t9RHME" target="_blank" rel="noopener noreferrer">
+            <h3>Curso Angular #26: Diretivas: ngSwitch, ngSwitchCase e ngSwitchDefault</h3>
+        </a>
+        <br>
+<!--  -->
+        <button type="button" class="btn btn-primary" (click)="isCollapsed = !isCollapsed"
+                [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">
+                Video embedded
+        </button>
+        <div id="collapseBasic" [collapse]="isCollapsed">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/uToE2t9RHME" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <br>
+        <br>
+<!--  -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" 
+                        href="#switch" 
+                        [class.active]="aba == 'Home'"
+                        (click)="aba = 'Home'">Home</a>
+                    <a class="nav-item nav-link" 
+                        href="#switch"
+                        [class.active]="aba == 'Features'"    
+                        (click)="aba = 'Features'">Features</a>
+                    <a class="nav-item nav-link" 
+                        href="#switch"
+                        [class.active]="aba == 'Pricing'"
+                        (click)="aba = 'Pricing'">Pricing</a>
+                    <a class="nav-item nav-link" 
+                        href="#switch"
+                        [class.active]="aba == 'Default'"
+                        (click)="aba = 'Default'">Default</a>    
+                </div>
+            </div>
+        </nav>
+
+        <div id="switch" class="container" [ngSwitch]="aba" >
+            <p *ngSwitchCase="'Home'">Modo {{ aba }} Ativo.</p>
+            <p *ngSwitchCase="'Features'">Modo {{ aba }} Ativo.</p>
+            <p *ngSwitchCase="'Pricing'">Modo {{ aba }} Ativo.</p>
+            <p *ngSwitchDefault >Padrão para quando não contemplar nehuma das opções acima</p>
+        </div>
+    </article>
+</section>
+<hr>

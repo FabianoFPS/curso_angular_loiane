@@ -1,0 +1,13 @@
+<section class="operador-elvis">
+    <article>
+        <a href="https://youtu.be/z2GUOnkGCdc" target="_blank" rel="noopener noreferrer">
+        <h3>Curso Angular #31: Operador Elvis ("?")</h3></a>
+        <p>Descrição: {{ tarefa.desc }}</p>
+        <!-- <p>Responsavel: {{ tarefa.responsavel.nome }} </p> -->
+        <p>Responsável: {{ tarefa.responsavel != null ? tarefa.responsavel.nome : '' }} </p>
+        <p><b>Operador Elvis:</b> Usando o ponto de interrogação "?" depois de uma variavel (arefa.responsavel?.nome),
+        se verifica se é nulo, se for retorna vazio.</p>
+        <p>Responsável: {{ tarefa.responsavel?.nome }} </p>
+        <p>Responsável: {{ tarefa2.responsavel?.usuario?.nome }} </p>
+    </article>
+</section>

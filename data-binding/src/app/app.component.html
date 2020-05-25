@@ -1,1 +1,6 @@
 <app-data-bindig></app-data-bindig>
+<app-ciclo [valorInicial]="valor" *ngIf="!deletarCiclo" ></app-ciclo>
+<button (click)="mudarValor()">Mudar Valor</button>
+<button (click)="destruirCiclo()">Destruir Ciclo</button>
+<br>
+<br>

@@ -1,0 +1,64 @@
+<hr>
+<section class="ngIf">
+    <article>
+        <h3>*ngIf</h3>
+        <a href="https://youtu.be/7zJNIp44B60" target="_blank" rel="noopener noreferrer">
+            <h3>Curso Angular 2 #25: Diretivas: ngIf</h3>
+        </a>
+        <br>
+        <button class="btn btn-primary" (click)="onMostrarCursos()">Mostrar ou esconder cursos</button>
+        <h6>Angular 2</h6>
+        <div *ngIf="cursos.length > 0" >
+            lista de cursos aqui.
+        </div>
+        <div *ngIf="cursos.length == 0" >
+            Não existem cursos para seram listados.
+        </div>
+        <div *ngIf="mostrarCursos" >
+            lista de cursos aqui.
+        </div>
+        <div *ngIf="!mostrarCursos" >
+            Não existem cursos para seram listados.
+        </div>
+        <br>
+        <h6>Angular 4</h6>
+        <div *ngIf="cursos.length > 0 ; else cursosVazio" >
+            lista de cursos aqui.
+        </div>
+        <ng-template #cursosVazio>
+            Não existem cursos para seram listados.
+        </ng-template>
+        <div *ngIf="mostrarCursos ; else cursosVazio2" >
+            lista de cursos aqui.
+        </div>
+        <ng-template #cursosVazio2>
+            <div>
+                Não existem cursos para seram listados.
+            </div>
+        </ng-template>
+    </article>
+    <article>
+        <h4>hidden como alternativa</h4>
+        <div [hidden]="!mostrarCursos" >
+            lista de cursos aqui.
+        </div>
+        <div [hidden]="mostrarCursos" >
+            Não existem cursos para seram listados.
+        </div>
+    </article>
+    <hr>
+    <article>
+        <a href="https://youtu.be/e-OGZocglTA" target="_blank" rel="noopener noreferrer">
+            <h3>Curso Angular 2 #28: Diretivas: sobre o * e template</h3></a>
+        <h3>Removendo o * e usando template</h3>
+        <div *ngIf="mostrarCursos" >
+            lista de cursos aqui.
+        </div>
+        <ng-template [ngIf]="mostrarCursos">
+            <div>lista de cursos aqui.(2)</div>
+        </ng-template>
+        <div template="ngIf mostrar cursos">
+            lista de cursos aqui.(3)
+        </div>
+    </article>
+</section>

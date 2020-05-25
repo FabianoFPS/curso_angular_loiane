@@ -22,6 +22,20 @@ export class DataBindigComponent implements OnInit {
   valorSalvo: string = '';
   valorSalvo2: string = '';
   isMouseOver: boolean = false;
+  nome: string = 'abc';
+  pessoa: any = {
+    nome: "Fabiano",
+    idade: 35,
+    endereco: {
+      rua: "Goias",
+      numero: "250",
+      bairro: "Rincão Gaúcho",
+      UF: "RS"
+    }
+  }
+  nomeDoCurso: string = 'Angular';
+
+  valorInicial: number = 15;
 
   onMouseOverOut(){
 
@@ -67,6 +81,11 @@ export class DataBindigComponent implements OnInit {
   getCurtirCurso(){
 
     return true;
+  }
+  
+  onMudouValor(evento){
+
+    console.log(`Ação: ${evento.acao}, Valor atual: ${evento.novoValor}`);
   }
 
   constructor() { }

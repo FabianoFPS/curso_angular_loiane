@@ -1,5 +1,7 @@
 <section class="property-binding">
     <h2>Aula: Property Binding e Interpolação</h2>
+    <a href="https://youtu.be/rlVxG2lG1Tk" target="_blank" rel="noopener noreferrer">
+      Curso Angular #09: Property Binding e Interpolação</a>
     <article>
         <h3>Interpolation / interpolação</h3>
         <p>String renderizada com interpolação: {{ url }}</p>
@@ -16,7 +18,14 @@
         <img bind-src="urlImagem" >
         <br>
         <div [attr.atributopersonalizado]="getTexto()"></div>
+        <!-- Tag global data- -->
+        <div [attr.data-texto]="getTexto()"></div>
         <input type="text" [value]="getTexto()" style="width: 400px;">
+        <input type="text" bind-value="getTexto()" style="width: 400px;">
+        <!-- 
+          Comando completo: bind-propiedadeHTML,ex: bind-value
+                  reduzido: [propiedadeHTML], ex: [value]
+         -->
     </article>
     <hr>
     <h2>Aula: Class e Style binding</h2>
@@ -46,6 +55,9 @@
      -->
     <article>
         <alert type="success"><h3>Class e Style binding</h3></alert>
+        <a href="https://youtu.be/NxtlQSpSgx8" target="_blank" rel="noopener noreferrer">
+          Curso Angular #10: Class e Style binding
+        </a>
         <h4>Property binding por classe</h4>
         <div>
             <select #classeAlerta (change)="0">
@@ -98,7 +110,7 @@
           </div>
           <div class="alert alert-danger" role="alert"
           [style.display]="classeAlerta.value == 'alert-danger' ? 'block' : 'none'">
-          <!-- block exibe, none não exibe -->
+          <!-- "block" exibe, "none" não exibe -->
             Esse texto aparece somente em caso de erro!
           </div>
           <alert type="danger"
@@ -110,7 +122,18 @@
 <section class="event-binding">
     <article>
         <h2>Aula: Event binding</h2>
+        <a href="https://youtu.be/WF28rLBangw" target="_blank" rel="noopener noreferrer">
+          Curso Angular #11: Event binding
+        </a>
         <div>
+          <!-- 
+            Comando completo: on-click, on-EventosDaTagHTML
+            Reduzido: (click), (EventosDaTagHTML)
+           -->
+          <button on-click="botaoClicado()" 
+            class="btn btn-primary">
+                Me clique!
+            </button>
             <button (click)="botaoClicado()" 
             class="btn btn-primary">
                 Me clique!
@@ -139,4 +162,72 @@
             </span>
         </div>
     </article>
+</section>
+<section class="two-way-binding">
+  <article>
+    <h3>Two-way data binding</h3>
+    <a href="https://youtu.be/7PI-2pvLTu8" target="_blank" rel="noopener noreferrer">
+      Curso Angular #12: Two-way data binding
+    </a>
+    <div>
+      <input type="text"
+        [value]="nome"
+        (input)="nome = $event.target.value"
+        >
+        <!-- 
+          Para usar ngModel deve se fazer a importação no module
+          import { FormsModule } from '@angular/forms'
+          imports: [...
+                    FormsModule,
+                    ...]
+         -->
+        <input type="text" 
+          [ngModel]="nome"
+          (ngModelChange)="nome = $event"
+          >
+        <input type="text"
+          [(ngModel)]="nome">
+        <!-- Comando Completo: bindon-ngModel -->
+        <!-- Camando reduzido: [(ngModel)] -->
+        <input type="text"
+          bindon-ngModel="nome">
+        <p>Você digitou o nome: {{ nome }}</p>
+    </div>
+    <div>
+      <input type="text" [(ngModel)]="pessoa.nome">
+      <input type="text" [(ngModel)]="pessoa.idade">
+      <input type="text" [(ngModel)]="pessoa.endereco.rua">
+      <input type="text" [(ngModel)]="pessoa.endereco.numero">
+      <input type="text" [(ngModel)]="pessoa.endereco.bairro">
+      <input type="text" [(ngModel)]="pessoa.endereco.UF">
+      <p>
+        Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos. Moro na rua {{ pessoa.endereco.rua }} 
+        , número {{ pessoa.endereco.numero }}, bairro {{ pessoa.endereco.bairro }}, {{ pessoa.endereco.UF }}.
+      </p>
+    </div>
+  </article>
+</section>
+<section class="input-output-properties">
+  <article>
+    <h3>Input/Output Properties</h3>
+    <a href="https://youtu.be/G2cBpYZ0fzk" target="_blank" rel="noopener noreferrer">
+      Curso Angular #13: Reusando Componentes com Input properties
+    </a>
+    <app-curso [nomeCurso2]="nomeDoCurso" 
+      [nome]="nomeDoCurso"
+      [entrada]="nomeDoCurso"
+      [entradaDeDadosDois]="nomeDoCurso">
+    </app-curso>
+  </article>
+  <article>
+    <a href="https://youtu.be/Lbwk8oDJrCU" target="_blank" rel="noopener noreferrer">
+      Curso Angular #14: Emitindo Eventos com Output properties
+    </a>
+    <contador [valor]="valorInicial"
+      (mudouValor)="onMudouValor($event)"
+    ></contador>
+  </article>
+</section>
+<section>
+  
 </section>

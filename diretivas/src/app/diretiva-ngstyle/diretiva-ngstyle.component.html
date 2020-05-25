@@ -1,0 +1,30 @@
+<section class="ngstyle">
+    <article>
+        <a href="https://youtu.be/WBf5sgByOY4" target="_blank" rel="noopener noreferrer">
+        <h3>Curso Angular #30: Diretivas: ngStyle</h3></a>
+        <h5>Style com property binding (style Binding)</h5>
+        <button 
+            [style.backgroundColor] = "ativo ? 'blue' : 'gray'"
+            [style.color] = "ativo ? 'white' : 'black'"
+            [style.fontWeight] = "ativo ? 'bold' : 'normal'"
+            [style.fontSize] = "tamanhoFonte + 'px'"
+            [title]="tamanhoFonte"
+            (click)="mudarAtivo()" >
+            Mudar atributo ativo
+            <!-- 3:20 -->
+        </button>
+        <button 
+            [ngStyle]="{
+                'backgroundColor': ativo ? 'blue' : 'gray',
+                'color': (ativo ? 'white' : 'black'),
+                'fontWeight': ativo ? 'bold' : 'normal',
+                'fontSize': tamanhoFonte + 'px'
+            }"
+            (click)="mudarAtivo()" >
+            Mudar atributo ativo
+        </button>
+        <br>
+        <input type="text" [(ngModel)]="tamanhoFonte" >
+        <p>{{ tamanhoFonte }}</p>
+    </article>
+</section>
