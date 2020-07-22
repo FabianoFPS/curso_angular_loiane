@@ -1,0 +1,78 @@
+<article>
+    <a href="https://youtu.be/jrXQFpbw2HQ" target="_blank" rel="noopener noreferrer">
+    <h3>Curso Angular #43: Pipes (usando pipes, parâmetros e pipes aninhados)</h3></a>
+    <div>
+    <p>Título: {{ livros.titulo | uppercase }}</p>
+    <p>Título: {{ livros.titulo | uppercase | lowercase }}</p>
+    <P>Lançamento: {{ livros.dataLancamento | date: 'dd/MM/yyyy' }} </P>
+    <p>Editora: {{ livros.Editora }} </p>
+    <p>Estrelas: {{ livros.Avaliacoes | number: '2.1-2' }} </p>
+    <p>Preço: {{ livros.preco | currency: 'BRL' }} </p>
+    <br>
+    <p>Livro: {{ livros | json }} </p>
+    </div>
+</article>
+<hr>
+<article>
+    <a href="https://youtu.be/KO7dVbigKvI" target="_blank" rel="noopener noreferrer">
+    <h3>Curso Angular #44: Criando um Pipe</h3></a>
+    <p>Título: {{ livros.titulo | uppercase | lowercase | camelCase }}</p>
+</article>
+<hr>
+<article>
+    <a href="https://youtu.be/U6y9dZfpT84" target="_blank" rel="noopener noreferrer">
+    <h3>Curso Angular #45: Aplicando Locale (internacionalização) nos Pipes</h3></a>
+    <P>Lançamento: {{ livros.dataLancamento | date }} </P>
+    <P>Lançamento: {{ livros.dataLancamento | date: 'dd - MMMM - yyyy' }} </P>
+    <P>Lançamento: {{ livros.dataLancamento | date: 'full' }} </P>
+    <p>Preço: {{ livros.preco | currency: 'BRL' }} </p>
+</article>
+<hr>
+<article>
+    <a href="https://youtu.be/h1t_O_w0LOc" target="_blank" rel="noopener noreferrer">
+    <h3>Curso Angular #46: Pipes: Criando um Pipe "Puro"</h3></a>
+    <div>
+        <label for="fil">Filtro:</label><br>
+        <input type="text" id="fil" name="fil" [(ngModel)]="filtro" placeholder="Filtro" >
+        <br>
+        <input type="text" name="" id="" placeholder="Novo Item" #novoValor>
+        <button (click)="addCurso(novoValor.value)" >Adiconar</button>
+        <ul>
+            <li *ngFor="let livro of listaLivros | filtroArray: filtro "  > {{ livro }} </li>
+        </ul>
+    </div>
+</article>
+<hr>
+<article>
+    <a href="https://youtu.be/Qn54Z3wbU2E" target="_blank" rel="noopener noreferrer">
+        <h3>Curso Angular #47: Pipes: Criando um Pipe "Impuro"</h3></a>
+    <div>
+        <label for="fil">Filtro:</label><br>
+        <input type="text" id="fil-2" name="fil-2" [(ngModel)]="filtro" placeholder="Filtro" >
+        <br>
+        <input type="text" placeholder="Novo Item" #novoValor2>
+        <button (click)="addCurso(novoValor2.value)" >Adiconar</button>
+        <ul>
+            <li *ngFor="let livro of listaLivros | filtroArrayImpuro: filtro "  > {{ livro }} </li>
+        </ul>
+    </div>
+    <div>
+        <h3>Maneira Correta de Usar Filtros Nos Projetos</h3>
+        <ul>
+            <li *ngFor="let livro of obterCursos()">
+                {{ livro }}
+            </li>
+        </ul>
+    </div>
+</article>
+<hr>
+<article>
+    <a href="https://youtu.be/WhcK7QOL6YA" target="_blank" rel="noopener noreferrer">
+    <h3>Curso Angular #48: Pipes: Async (assíncrono)</h3></a>
+    <br>
+    <!-- <p>{{ valorAsync | json }}</p> -->
+    <br>
+    <p>{{ valorAsync | async }}</p>
+    <br>
+    <p> {{ valorAsync2 | async }} </p>
+</article>
