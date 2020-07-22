@@ -15,7 +15,7 @@ const APP_ROUTS: Routes = [
       component: LoginComponent
   },
   {
-      path: 'cursos',
+      path: 'cursos/:id',
       component: CursosComponent
   }
 ];
