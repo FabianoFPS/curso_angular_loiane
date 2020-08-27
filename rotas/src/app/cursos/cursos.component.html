@@ -1,1 +1,45 @@
-<p>cursos works!</p>
+<mat-nav-list>
+    
+    <span class="icone">
+        <mat-icon [matBadge]="pagina" matBadgeColor="accent">
+            important_devices
+        </mat-icon>
+    </span>
+    <span class="icone">
+        <mat-icon [matBadge]="pagina" matBadgeColor="accent">
+            language
+        </mat-icon>
+    </span>
+    <span class="icone icone-azul">
+        <mat-icon [matBadge]="pagina" matBadgeColor="warn">
+            outlet
+        </mat-icon>
+    </span>
+    <span class="icone">
+        <mat-icon [matBadge]="pagina" matBadgeColor="warn">
+            shopping_cart
+        </mat-icon>
+    </span>
+    <span class="icone">
+        <mat-icon [matBadge]="pagina" matBadgeColor="warn" md-48>
+            email
+        </mat-icon>
+    </span>
+    <span class="icone">
+        <mat-icon [matBadge]="pagina" matBadgeColor="warn">
+            shopping_cart
+        </mat-icon>
+    </span>
+    <span>
+        <i class="material-icons orange600">face</i>
+    </span>
+    <p>
+        <span>Página: </span>{{ pagina }}
+    </p>
+    <a mat-list-item
+        [routerLink]="['/cursos', curso.id]"
+        *ngFor="let curso of cursos">
+         {{ curso.nome }} 
+    </a>
+ </mat-nav-list>
+ <button mat-raised-button color="accent" (click)="proximapagina()">Poxima página</button>
