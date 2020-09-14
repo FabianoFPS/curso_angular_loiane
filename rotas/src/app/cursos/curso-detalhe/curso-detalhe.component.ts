@@ -17,7 +17,7 @@ export class CursoDetalheComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private cursoService: CursoService,
-    private rota: Router) { 
+    private rota: Router) {
     // console.log(this.route);
     // this.id = this.route.snapshot.params['id'];
   }
@@ -29,7 +29,7 @@ export class CursoDetalheComponent implements OnInit {
       this.curso = this.cursoService.getCurso(parans['id']);
 
       if(this.curso == null){
-        this.rota.navigate(['naoEncontrado', this.id]);
+        this.rota.navigate(['cursos/naoEncontrado', this.id]);
       }
     });
   }

@@ -8,14 +8,9 @@ import { Routes, RouterModule } from '@angular/router';
 // import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-encontrado.component';
 
 const APP_ROUTS: Routes = [
-  // {
-  //   path: '',
-  //   component: HomeComponent
-  // },
-  // {
-  //   path: 'login',
-  //   component: LoginComponent
-  // },
+
+  // { path: '', component: HomeComponent },
+  // { path: 'login', component: LoginComponent },
   // {
   //   path: 'cursos',
   //   component: CursosComponent

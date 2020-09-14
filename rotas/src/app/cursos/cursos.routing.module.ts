@@ -1,3 +1,4 @@
+import { AuthService } from './../login/auth.service';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -5,14 +6,23 @@ import { CursosComponent } from './cursos.component';
 import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
 import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-encontrado.component';
 
-const cursosRouts: Routes = [
-  { path: 'cursos', component: CursosComponent },
-  { path: 'cursos/:id', component: CursoDetalheComponent},
-  { path: 'naoEncontrado/:id', component: CursoNaoEncontradoComponent }
+// const cursosRouts: Routes = [{
+//   path: '',
+//   component: CursosComponent,
+//   children: [
+//     { path: ':id', component: CursoDetalheComponent},
+//     { path: 'naoEncontrado/:id', component: CursoNaoEncontradoComponent },
+//   ]
+// }];
+
+const cursosRoutes: Routes = [
+  { path: '', component: CursosComponent },
+  { path: 'naoEncontrado/:id', component: CursoNaoEncontradoComponent, },
+  { path: ':id', component: CursoDetalheComponent, }
 ];
-    
+
 @NgModule({
-  imports: [RouterModule.forChild(cursosRouts)],
+  imports: [RouterModule.forChild(cursosRoutes)],
   exports: [RouterModule]
 })
 
